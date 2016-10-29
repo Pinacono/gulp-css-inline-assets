@@ -9,10 +9,26 @@ function iterate( file, ast, options, cb ) {
     var iterable, iterator;
     var count = 0;
 
+    var URL_REGEX = /url\(\s*(?:"|')?(.+?)(?:"|')?\s*\)/;
     switch ( ast.type ) {
         case "font-face":
             iterable = ast.declarations;
             iterator = parseDeclaration;
+            break;
+
+        case "rule":
+            for ( var i in ast.declarations ) {
+                var decl = ast.declarations[i];
+                if ( decl.type != "declaration" ) {
+                    continue;
+                }
+                if ( decl.value.match(URL_REGEX) ) {
+                    //console.log("got url in - " + decl.property);
+                    iterable = ast.declarations;
+                    iterator = parseDeclaration;
+                    break;
+                }
+            }
             break;
 
         case "stylesheet":
@@ -55,12 +71,14 @@ module.exports = function( options ) {
             return cb( null, file );
         }
 
+        //console.log("processing " + file.path);
         str = file.contents.toString( "utf8" );
 
         try {
             ast = css.parse( str );
         } catch ( e ) {
             // If some error occurs while parsing the file, we'll not do anything with it
+            //console.log("error parsing! - " + e.toString());
             return cb( null, file );
         }
 
