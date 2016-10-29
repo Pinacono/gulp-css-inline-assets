@@ -84,7 +84,7 @@ module.exports = function( options ) {
 
         iterate( file, ast, options || {}, function ( err ) {
             if ( err ) {
-                return cb( new gutil.PluginError( "gulp-inline-assets", err.message ) );
+                return cb( new gutil.PluginError( "gulp-css-inline-assets", err.message ) );
             }
 
             file.contents = new Buffer( css.stringify( ast ) );
