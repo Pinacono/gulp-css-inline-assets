@@ -1,7 +1,7 @@
 # gulp-css-inline-assets
 > Inline local and external assets (images, fonts) in a CSS file in the form of a data URI.
 
-[![Build Status](https://img.shields.io/travis/gustavohenke/gulp-inline-assets.svg?style=flat-square)](https://travis-ci.org/gustavohenke/gulp-inline-assets)
+[![Build Status](https://travis-ci.org/Pinacono/gulp-css-inline-assets.svg?branch=master")](https://travis-ci.org/Pinacono/gulp-css-inline-assets)
 
 ## Install
 ```shell
@@ -32,7 +32,7 @@ Type: `boolean`
 Determines if URLs with errors should be ignored.
 
 ## Credit
-Based on gulp-init-assets module by Gustavo Henke 
+Based on [gulp-inline-assets](https://github.com/gustavohenke/gulp-inline-assets) module by [Gustavo Henke](https://github.com/gustavohenke) 
 
 ## License
 MIT @ Pinacono
