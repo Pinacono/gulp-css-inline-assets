@@ -2,7 +2,7 @@
     "name": "gulp-css-inline-assets",
     "version": "0.1.2",
     "description": "Gulp plugin for inlining CSS assets",
-    "repository": "Pinacono/gulp-inline-assets",
+    "repository": "Pinacono/gulp-css-inline-assets",
     "license": "MIT",
     "dependencies": {
         "css": "^2.1.0",
