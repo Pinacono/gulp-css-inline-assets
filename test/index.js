@@ -171,4 +171,20 @@ describe( "", function () {
         });
         stream.write( fixture( "error.css" ) );
     });
+
+    it( "should allow ignoring file that match wildcard", function ( cb ) {
+        var stream = inline({
+            ignores: ['*.woff']
+        });
+
+        stream.on( "data", function ( file ) {
+            assert.equal(
+                file.contents.toString( "utf8" ),
+                fs.readFileSync( __dirname + "/fixtures/local.css", "utf8" )
+            );
+            cb();
+        });
+        stream.write( fixture( "local.css" ) );
+    });
+
 });

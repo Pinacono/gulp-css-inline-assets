@@ -31,6 +31,11 @@ Type: `boolean`
 
 Determines if URLs with errors should be ignored.
 
+### ignores
+Type: `array`
+
+List of URLs to ignore (do not make them inline.). Wildcard is allowed.
+
 ## Credit
 Based on [gulp-inline-assets](https://github.com/gustavohenke/gulp-inline-assets) module by [Gustavo Henke](https://github.com/gustavohenke) 
 
