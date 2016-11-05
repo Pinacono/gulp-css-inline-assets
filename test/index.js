@@ -165,7 +165,7 @@ describe( "", function () {
         stream.on( "data", function ( file ) {
             assert.equal(
                 file.contents.toString( "utf8" ),
-                fs.readFileSync( __dirname + "/fixtures/error.css", "utf8" )
+                fs.readFileSync( __dirname + "/expected/error.css", "utf8" )
             );
             cb();
         });
@@ -180,7 +180,7 @@ describe( "", function () {
         stream.on( "data", function ( file ) {
             assert.equal(
                 file.contents.toString( "utf8" ),
-                fs.readFileSync( __dirname + "/fixtures/local.css", "utf8" )
+                fs.readFileSync( __dirname + "/expected/local.css", "utf8" )
             );
             cb();
         });
